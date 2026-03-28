@@ -1,0 +1,117 @@
+{
+  "name": "@buka/nuxt-kit",
+  "version": "0.0.1",
+  "description": "Buka Nuxt/Vue Development Kit",
+  "packageManager": "pnpm@10.28.2",
+  "type": "module",
+  "sideEffects": false,
+  "types": "dist/index.d.ts",
+  "module": "dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./composables": {
+      "types": "./dist/composables/index.d.ts",
+      "import": "./dist/composables/index.js"
+    },
+    "./components": {
+      "types": "./dist/components/index.d.ts",
+      "import": "./dist/components/index.js"
+    },
+    "./utils": {
+      "types": "./dist/utils/index.d.ts",
+      "import": "./dist/utils/index.js"
+    },
+    "./keq": {
+      "types": "./dist/keq/index.d.ts",
+      "import": "./dist/keq/index.js"
+    }
+  },
+  "imports": {
+    "#composables/*": "./src/composables/*",
+    "#components/*": "./src/components/*",
+    "#utils/*": "./src/utils/*",
+    "#keq/*": "./src/keq/*"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint .",
+    "prepare": "is-ci || husky",
+    "prepublishOnly": "npm run build",
+    "commit": "cz",
+    "release": "standard-version",
+    "release:alpha": "standard-version --prerelease alpha"
+  },
+  "keywords": [
+    "nuxt",
+    "vue",
+    "vue3",
+    "composables",
+    "components",
+    "utils",
+    "keq",
+    "middleware",
+    "buka"
+  ],
+  "author": "Val.istar.Guo <val.istar.guo@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/buka-inc/npm.nuxt-kit#readme",
+  "bugs": {
+    "url": "https://github.com/buka-inc/npm.nuxt-kit/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/buka-inc/npm.nuxt-kit"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "@buka/error-codes": "^1.1.1",
+    "@buka/exception": "^1.0.4",
+    "@keq-request/exception": "file:../../@keq/keq/packages/exception"
+  },
+  "peerDependencies": {
+    "keq": ">=5.0.0-alpha",
+    "vue": ">=3.3.0"
+  },
+  "peerDependenciesMeta": {
+    "keq": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@buka/eslint-config": "^3.0.3",
+    "@commitlint/cli": "^19.0.0",
+    "@commitlint/config-conventional": "^19.0.0",
+    "@vitejs/plugin-vue": "^5.0.0",
+    "@vue/test-utils": "^2.4.0",
+    "@vue/tsconfig": "^0.7.0",
+    "commitizen": "^4.3.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^9.0.0",
+    "globals": "^15.0.0",
+    "husky": "^9.0.0",
+    "is-ci": "^3.0.0",
+    "jsdom": "^25.0.0",
+    "keq": "file:../../@keq/keq/packages/keq",
+    "standard-version": "^9.5.0",
+    "typescript": "^5.9.3",
+    "vite": "^6.0.0",
+    "vite-plugin-dts": "^4.0.0",
+    "vitest": "^2.0.0",
+    "vue": "^3.5.0",
+    "vue-tsc": "^2.0.0"
+  }
+}
