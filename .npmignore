@@ -1,0 +1,15 @@
+/.github
+/.husky
+/.vscode
+/src
+/__tests__
+/coverage
+
+.commitlintrc.yml
+.node-version
+pnpm-workspace.yaml
+eslint.config.mjs
+vitest.config.ts
+vite.config.ts
+tsconfig.json
+tsconfig.*.json

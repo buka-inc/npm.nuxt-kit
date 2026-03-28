@@ -1,0 +1,33 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "command": "pnpm dev",
+      "isBackground": true,
+      "problemMatcher": ["$tsc-watch"],
+      "label": "vite:watch",
+      "detail": "vite build --watch",
+      "group": "build",
+      "presentation": {
+        "reveal": "silent",
+        "panel": "dedicated"
+      },
+      "runOptions": {
+        "instanceLimit": 1,
+        "runOn": "folderOpen"
+      }
+    },
+    {
+      "type": "shell",
+      "command": "pnpm build",
+      "problemMatcher": ["$tsc"],
+      "label": "vite:build",
+      "detail": "vite build",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
